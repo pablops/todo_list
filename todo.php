@@ -41,7 +41,7 @@ do {
         // Add entry to list array
         $thisone = trim(fgets(STDIN));
         // print_r($thisone);
-        echo '(F)irst or (L)ast';
+        echo '(F)irst or (L)ast: ';
         $firstorlast = trim(fgets(STDIN));
             if ($firstorlast == 'F'){
                array_unshift ($items , $thisone);
@@ -59,7 +59,12 @@ do {
         // Add a (S)ort option to your menu. When it is chosen, it should call a function called sort_menu().
     } elseif ($input == 'S'){
         sort_menu($items);
+    } elseif ($input == 'X'){
+        array_pop($items);
+    } elseif ($input == 'Z'){
+        array_shift($items);
     }
+
 // Exit when input is (Q)uit
 } while ($input != 'Q');
  
